@@ -14,6 +14,12 @@ script:
 - "./debuild.sh |& tee log.txt"
 after_script:
 - bash ./scripts/deploy.sh
+before_deploy:
+  - export logo_package="`echo plymouth-theme-meilix-logo_*_all.deb`"
+  - export text_package="`echo plymouth-theme-meilix-text_*_all.deb`"
+  - cat plymouth-theme-meilix-logo_*_all.deb > "/home/travis/${logo_package}"
+  - cat plymouth-theme-meilix-text_*_all.deb > "/home/travis/${text_package}"
+  - cp log.txt /home/travis/log.txt
 notifications: 
 slack: fossasia:3pMkQrSogvEMfnu9aJDW2ZYC
 deploy:
