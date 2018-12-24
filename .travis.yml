@@ -22,8 +22,8 @@ deploy:
   api_key:
     secure: jtYK8iiPuN4UTFER2lylIHaIxDC9KXh+OBaIrFIU3oBeVCTG0ZQxIX8WquDS5tPWf8fE+XffN4ckwG/F6NlWS/m6eWpil78OYQNyukqKYXGcgzlBf44pQ5Q0FG9sek/v3CJ8knfyZTTi/92PHP8oRCsKRqtaR3ZXWaX+Z2WhVLJ++mSsvYSfbSXlhA9TPIcLi+ADe2peZPqGiyp/7HdLRWIy0quA7DoEAIzFr3JDvudUavh3jOpb7mRgZS15aOQxoHQyCrLdu+wgnDVebxQwv4N1GUpvtIyftJNvCf9rSo7KeU0TK7K1R1hMc7nJf+6TGD6VHHXzyqyHvHJDKe4KaxxY9la/dx9NrvAVQG4ktOji7bIepHlTiScNHiiZR4FJZ1oidzNCV3mOaszDy1DzJ66rYyYFuXjZOvpl6K+fGPMqJizxitmx8w8w2CQ/aLIx8JPmdCNu462X8fxxmuesycytBFV8+4Ubm5WjIkAI9g3V6NNpY6V0cFJLVssfVpwz5CYwr+JdHVKcu++QEyXcghIbMz2xvAeKRzd7cdnvGY1j6k8txA5xdh7caWx4X2nUiLReiL+295FPzis/Ot1ec+ibEWRCwAJeESOVdRAhIwEVTlXXGRCpZqkIMlzJH1EOWGB+ZOjx+4F3cyKhDeeIVYRWDHZHPa8AjH2MSKyDSdc=
   file: 
-    - "plymouth-theme-meilix-logo_*_all.deb"
-    - "plymouth-theme-meilix-text_*_all.deb"
+    - "/home/travis/plymouth-theme-meilix-logo_*_all.deb"
+    - "/home/travis/plymouth-theme-meilix-text_*_all.deb"
   on:
     repo: pranav1698/meilix-artwork
     branch: tests
