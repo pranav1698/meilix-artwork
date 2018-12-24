@@ -7,10 +7,6 @@ addons:
 sudo: required
 git:
   depth: 22
-matrix:
-  include:
-    # Check  the changes
-    - script: bash ./test.sh
 before_script:
 - sudo apt-get install devscripts debhelper libfile-fcntllock-perl
 script:
