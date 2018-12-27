@@ -3,7 +3,7 @@
 # Bash script to the generated deploy deb files to "deb" branch
 # for commits (including merge commits)
 
-set -e
+set -evx
 
 if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
   # Setup git
