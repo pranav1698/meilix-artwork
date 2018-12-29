@@ -29,6 +29,7 @@ deploy:
   file: 
   - "/home/travis/${logo_package}"
   - "/home/travis/${text_package}"
+  - "./meilix-default-theme_1.0-2_all.deb"
   on:
     repo: pranav1698/meilix-artwork
     branch: test-deb
