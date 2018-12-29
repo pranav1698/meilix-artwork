@@ -14,6 +14,12 @@ script:
 - "./debuild.sh |& tee log.txt"
 after_script:
 - bash ./scripts/deploy.sh
+before_deploy:
+  - export logo_package="`echo plymouth-theme-meilix-logo_*_all.deb`"
+  - export text_package="`echo plymouth-theme-meilix-text_*_all.deb`"
+  - cat plymouth-theme-meilix-logo_*_all.deb > "/home/travis/${logo_package}"
+  - cat plymouth-theme-meilix-text_*_all.deb > "/home/travis/${text_package}"
+  - cp log.txt /home/travis/log.txt
 notifications: 
 slack: fossasia:3pMkQrSogvEMfnu9aJDW2ZYC
 deploy:
@@ -21,7 +27,8 @@ deploy:
   api_key:
     secure: tBwtL2Jj8YG7EpGKqzC3dwcVI3Kc+7BzZzMYOfQIIqlgXvvzAoPZzcPjJmmsF05gXtZMtsLt4BrkTXY9vA5Jm/gdEG1XTjf+l5N3x3ucMGe+qmMRky7z1fHA50Uq3Kd+6z9A6GVPbnTjKZy129aoNJ8F11dhzeagY6ffttOcT5p7edLg06aNSAcMYB0J0eegKTFdyWDAsQFXpI0C/Ngiq8mz5bjxgAVw6fxbqC6kxr4uxdtx+ajeiVPMFdEEWHu9zzE79fYjgeMyo77sI/84oGJ83578cZHy8hpmGatwh3O5Hr8q5eoB24a4A4LanWiBgF0vztD3Pr5+3/UTgS3Xr5f4FSvPAjSmjVKASr0kSmjfz+VUJLg/n2G5fCCZ4pE8s81UfFTdeNWppFsICnpp2yz0m0TJuqkIPCBZsABJLNc4qds6VbkPNqBihOJobV3veuOXYOFmvt8XItOKMcJzN8zapUrf7rnx6q65s7WrvVFECjc4ErTwREcKdO2MJA+31ILvIz9CWsUPOaXCfc7Tyr1egZa4ohdcdtPnGut7vDmT0qsqFd2CfxCXHvhZhla6cdb4mLvduanyINIUFvoQiCLHr3MeGqESlPlEKQBJo0JAAEiGkI3+0k50INNpld7q8lmQ+dAw+zTmuld6wP/40IQGZbGuYB4T+TxfvU/vx0k=
   file: 
-    - ./file
+  - "/home/travis/${logo_package}"
+  - "/home/travis/${text_package}"
   on:
     repo: pranav1698/meilix-artwork
     branch: test-deb
