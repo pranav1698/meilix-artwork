@@ -15,13 +15,15 @@ script:
 after_script:
 - bash ./scripts/deploy.sh
 before_deploy:
-- export logo_package="`echo plymouth-theme-meilix-logo_*_all.deb`"
-- export text_package="`echo plymouth-theme-meilix-text_*_all.deb`"
-- export login_package="`echo sddm-theme-meilix_*_all.deb`"
-- cat plymouth-theme-meilix-logo_*_all.deb > "/home/travis/${logo_package}"
-- cat plymouth-theme-meilix-text_*_all.deb > "/home/travis/${text_package}"
-- cat sddm-theme-meilix_*_all.deb > "/home/travis/${login_package}"
-- cp log.txt /home/travis/log.txt
+  - export logo_package="`echo plymouth-theme-meilix-logo_*_all.deb`"
+  - export text_package="`echo plymouth-theme-meilix-text_*_all.deb`"
+  - export login_package="`echo sddm-theme-meilix_*_all.deb`"
+  - export theme_package="`echo meilix-default-theme_*_all.deb`"
+  - cat plymouth-theme-meilix-logo_*_all.deb > "/home/travis/${logo_package}"
+  - cat plymouth-theme-meilix-text_*_all.deb > "/home/travis/${text_package}"
+  - cat sddm-theme-meilix_*_all.deb > "/home/travis/${login_package}"
+  - cat meilix-default-theme_*_all.deb > "/home/travis/${theme_package}"
+  - cp log.txt /home/travis/log.txt
 notifications: 
 slack: fossasia:3pMkQrSogvEMfnu9aJDW2ZYC
 deploy:
@@ -29,7 +31,10 @@ deploy:
   api_key:
     secure: jG/fu8QZPmrCaQqfDuXdI5o/6wjZ7QOyS956RkYXv6Mzm5SfjCHSbJCpi75oSEQmN2xMYIsbJAhLRkZqlShYO05VKclKrHv76upiayW4boME7TuEZoWB68h3EBhMKzugioDfcn+mh0xdoJ+nZHV3lBVlwvzQha67SUp4JH5QhmT6I+/Qp33Y4lO+7PUc5EusE8Ar/gWUQNNjF6Y0XmKh4PJhJmUipfAuDcCGs0+PNx8kbnPXkRO/oClwchEDgiqgeoiOG+z2xmR9PBUOgKa+Bb+2RSfjQoKp4/8X4vU82wsr3lIcXQqkmYCgraRb2mKeZ4K4hNis/Q0zgNspi4KbBrMZXfwzeaWBkpL9WT78WAV9A2KFmOhNA0ALmxbAVgNUNaoMYFWpPdJVvX0nxfiOH/MUp4PcxscoTirMitRAE95iT+jgzJVPTFniYaE8xIP6svKONnof7GN4GeEqMXYXkrapI+wJkQjjIZNUkuONNWbhpOeNgvVm7KGzmhnGiW4AIDEaYSsKHXpAhjhuiyc9M853NJju7bw3HmdwebprxhwmUC0K8M4iq3Z/W4SJ91mdAJM2NMS3vJsWPij/f8qZXHXCmXmbzHcxWRu4PvIqHlz1b98zqq9zJjj99YLVPdwFeW2VBi7IIYgZZxOiHzU4P48vBJk3JIr6cHT2+alVpuk=
   file: 
-    - './meilix-default-theme_1.0-2_all.deb'
+  - "/home/travis/${logo_package}"
+  - "/home/travis/${text_package}"
+  - "/home/travis/${login_package}"
+  - "/home/travis/${theme_package}"
   on:
     repo: pranav1698/meilix-artwork
     branch: artwork-test
