@@ -31,7 +31,7 @@ deploy:
   api_key:
     secure: AnjREibWBg0orI/cYAysr+5eARrYQK+eAvGIpt6J8BxTdycl1vub+PPwjq9IzYGhquSYzW3dDBZjxuDO9grimYQtX6JJs2GIJeqeMO2HxKpbdd54J9ewL8a6hq/TSyhe2Z/bPY7AhsIp8MPWWKBzKZ3bEMRcx+jXGubqQWSyndx4DlzaoDsDShg7fqV+y13wC0IWQc+K/LxYSn1Uswwm3KMvZp4/upB9kZx82SeoFSzjWc73mF7GeZ4R8i+NcedB/KiOMcbX92sd8SHsEYFrC7KWwUqGy5oc/SKrEyvfDmU6rvvMfVSZadjxb6C5I/vYZ7Ohe00dgS7253GTOtGfQTMZdMRvnnPVPQnTHhPxzUSdpT4wNvrJI2XHLe19lW07naHmqhSdwBVq78V4J8jtU7BCIqit001WE9ach5uBcbxSu3//OliZnMZyM/nPQJ/T7VCBDGiRwSvfndNO6QuDydznhW61wkfgUI8Ho0Aj6C+Bf9MgY2X2325siSwSiAPfI8yQD75vHYTz/iT7V5yG6Rn+aJJCGEsiPT16V8RjkgkTPZiBfikSqlLs8QB2131Fm8BOlSJLc3HR+CXFFDH7jhTeMioCjg/xrKKpWx+XuhPynRNHRn6xsMsBlSscfD622Po5UD4fmS4+zyxG8hbWyybZrv+Ce9psBKQs7Kfw+rc=
   file:
-    - theme_package
+    - ./meilix-default-theme_1.0-2_all.deb
   on:
     repo: pranav1698/meilix-artwork
     branch: test-branch
