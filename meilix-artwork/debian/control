@@ -33,8 +33,14 @@ Provides: sddm-theme
 Description: Meilix theme for SDDM X11 display manager
  Meilix chooser theme for SDDM
 
-Package: meilix-default-theme
+Package: meilix-default-light-theme
 Architecture: all
 Depends: ${misc:Depends}
-Description: Default theme for Meilix
+Description: Light theme for Meilix
  Meilix default theme for the custom ISO
+
+Package: meilix-default-dark-theme
+Architecture: all
+Depends: ${misc:Depends}
+Description: Dark theme for Meilix
+ Meilix Dark theme for the custom ISO
