@@ -1,0 +1,11 @@
+Package: meilix-default-dark-theme
+Source: meilix-artwork
+Version: 1.0-2
+Architecture: all
+Maintainer: Mario Behling <mb@mariobehling.de>
+Installed-Size: 39592
+Section: x11
+Priority: optional
+Homepage: http://mbm.vn
+Description: Dark theme for Meilix
+ Meilix Dark theme for the custom ISO
