@@ -7,6 +7,7 @@ sudo rm plymouth-theme-meilix-logo_*_all.deb
 sudo rm plymouth-theme-meilix-logo-2_*_all.deb
 sudo rm plymouth-theme-meilix-text_*_all.deb
 sudo rm sddm-theme-meilix_*_all.deb
-sudo rm meilix-default-theme_*_all.deb
+sudo rm meilix-default-light-theme_*_all.deb
+sudo rm meilix-default-dark-theme_*_all.deb
 cd meilix-artwork                                #cd into the metapackage directory
 echo y | debuild -uc -us #debuild the plymouth
