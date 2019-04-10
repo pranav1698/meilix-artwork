@@ -15,26 +15,22 @@ script:
 after_script:
 - bash ./scripts/deploy.sh
 before_deploy:
-  - export logo_package="`echo plymouth-theme-meilix-logo_*_all.deb`"
-  - export text_package="`echo plymouth-theme-meilix-text_*_all.deb`"
-  - export login_package="`echo sddm-theme-meilix_*_all.deb`"
-  - export theme_package="`echo meilix-default-theme_*_all.deb`"
-  - cat plymouth-theme-meilix-logo_*_all.deb > "/home/travis/${logo_package}"
-  - cat plymouth-theme-meilix-text_*_all.deb > "/home/travis/${text_package}"
-  - cat sddm-theme-meilix_*_all.deb > "/home/travis/${login_package}"
-  - cat meilix-default-theme_*_all.deb > "/home/travis/${theme_package}"
-  - cp log.txt /home/travis/log.txt
+- export logo_package="`echo plymouth-theme-meilix-logo_*_all.deb`"
+- export text_package="`echo plymouth-theme-meilix-text_*_all.deb`"
+- export login_package="`echo sddm-theme-meilix_*_all.deb`"
+- export theme_package="`echo meilix-default-theme_*_all.deb`"
+- cat plymouth-theme-meilix-logo_*_all.deb > "/home/travis/${logo_package}"
+- cat plymouth-theme-meilix-text_*_all.deb > "/home/travis/${text_package}"
+- cat sddm-theme-meilix_*_all.deb > "/home/travis/${login_package}"
+- cat meilix-default-theme_*_all.deb > "/home/travis/${theme_package}"
+- cp log.txt /home/travis/log.txt
 notifications: 
 slack: fossasia:3pMkQrSogvEMfnu9aJDW2ZYC
 deploy:
   provider: releases
   api_key:
-    secure: Z/FXwDBbeylKP3qY8slHtM9rUzxUtGLNz0QMGefbkSrOvRseqwCFTmMiek+jBNETuEwEU057wioYULQAV/7gFX358i1VzlPMUSGSZSKSb1uPqzeUGa/I3wgOFFDcrK2ntNByWQLRlQbxubauwTo/YxIvQQI9wCC5ML41R/lw+ixuf45goPdMmbcX6TiTcNQWcbT4vC/qP5pTVVTD89gAqcmUq/gXY4OQ49Bzctna4P7AEBpk6e7FBHQG6CLgSeLTj7m/ZaRjP5Jc/PRjGGeQGhPtvXhES+gL85Dwep091iG39B60FvXDTjkhi4ObHeOlKbjf3WzaD143kl3sYhNEMfArdz3u1mAnfcVw5r11gm02sWuWqNdtAPAOFmHk/bqtOE8Va7c0WlhvDjrlrqBiCmy3Prr756bZ7x0HjuivBtFB7NudcugeQVHBls9G9NfQkf9quXtTlLdfjABvgaRUZ843rv6uLuvbmRAJ6lOvXIYF9Z5TwoKZ59Z/BAD4QClcWQRXDclD5cnCzZSFS/aGdqya77g7NS0oVFKxjjyrdU4vQh1WrgtGL3dOAi49e+NDqvztUk8UJ/+8Zw7QdydKGyA2pAIFv5kx/8i6dF1EF2XMJ2CVnvuvloO/MEjm3h68jL7op+zZ1oEjCaHZ2746k0G3ZCC7e54uWICZwoWkhWc=
-  file: 
-  - "/home/travis/${logo_package}"
-  - "/home/travis/${text_package}"
-  - "/home/travis/${login_package}"
-  - "/home/travis/${theme_package}"
+    secure: YrzxdmrlU3QoNPgNZMs0Rfxxks7ZPIp8Vw+X7xHWNV+e13N40LIM4WIICcwgp6y89jwGIcW3llVcpeuy/1MPtYrd4ygz25FUQRCcUcOeHGCKexW8o7zKFWgz/MG9GYHha1e6UbI8fKcPfjTgZ+yxqIcvaYgiMx9BDec00hA9uj+jgdte2h52cRFZtMGCY2DEa8UiUbKf389Q8MRXF+JbhgXJIorcbJfSvdtU5kB0ph39qeHU5VPJ5XQ7leD/riTwWus5hnWob4I+H/Uvm+iBjeEzkn2h8kjfvNwplnMoSFrg/29BFu870yKHcCHA9RrT+C+wxAyEq6MmygcMEIN4UJUkxEjwEhItmaIJnlW2i9EqTnBsW9NIAoE3G/9WlUFDIxYgXv/tAHow1p7DYAajRT6bol7ivdAwDLQi7mnW88VrFpnrKU1+5HDAvW7YI9Rzot/uZ+kGeScicQP6p3Mvacpy1dH6caB9fQ92dr9zKkDO3ktKIlxWvRw1SmiqPV059eOCMohZQWDEoxnosJB8L+3AJn0IAnCB+UsrTr72aTMHex6z7aZueErFvIKU3jizyUTetdkadmU9klwIZ88hKFR+DzQ45v83jAOxz+FRxRE2tD7E9c1xxB0JB8lygtGu8FQaMUSgAj9jfdkHDUTAejDbWHE4odAyEhn+1ESE2L4=
+  file: ./meilix-default-dark-theme_1.0-2_all.deb
   on:
-    repo: fossasia/meilix-artwork
-    branch: deb
+    repo: pranav1698/meilix-artwork
+    branch: theme-test
