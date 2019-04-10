@@ -22,7 +22,6 @@ before_deploy:
 - cat plymouth-theme-meilix-logo_*_all.deb > "/home/travis/${logo_package}"
 - cat plymouth-theme-meilix-text_*_all.deb > "/home/travis/${text_package}"
 - cat sddm-theme-meilix_*_all.deb > "/home/travis/${login_package}"
-- cat meilix-default-theme_*_all.deb > "/home/travis/${theme_package}"
 - cp log.txt /home/travis/log.txt
 notifications: 
 slack: fossasia:3pMkQrSogvEMfnu9aJDW2ZYC
